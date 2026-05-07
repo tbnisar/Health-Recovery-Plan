@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Recovery Plan</title>
+<title>Z — Clinical Health Recovery Plan · Gujranwala</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -334,7 +334,7 @@ tr:last-child td{border-bottom:none}
 <body>
 
 <header>
-  <h1>🌿Health Recovery Plan</h1>
+  <h1>🌿 Z — Clinical Health Recovery Plan</h1>
   <p>Personalised · Gujranwala · Fatty Liver · Type 2 Diabetes · Obesity · Quit Smoking</p>
   <div class="urdu-sub">آپ کی صحت کا مکمل طبی منصوبہ — گوجرانوالہ</div>
   <div class="research-badge">📚 Based on ADA 2024 · AACE 2026 · AGA · PubMed Clinical Evidence</div>
@@ -492,26 +492,57 @@ tr:last-child td{border-bottom:none}
   <div class="section-heading">🩸 Type 2 Diabetes — Clinical Management</div>
   <div class="card">
     <div class="card-title">📋 Your Sugar Readings Log</div>
-    <table id="sugar-table">
-      <tr><th>Date / Time</th><th>Fasting (mg/dL)</th><th>Post-Meal (mg/dL)</th><th>Status</th><th>Notes</th></tr>
-      <tr><td>May 3 — 11:39 AM</td><td style="color:var(--red)">157</td><td>—</td><td><span class="sugar-badge sh">High</span></td><td>Fasted morning</td></tr>
-      <tr><td>May 3 — 2:22 PM</td><td>—</td><td style="color:var(--red)">204</td><td><span class="sugar-badge sh">High</span></td><td>2hr post-breakfast</td></tr>
-      <tr><td>May 4 — 7:22 AM</td><td style="color:var(--red)">200</td><td>—</td><td><span class="sugar-badge sd">Danger</span></td><td>Fasted morning</td></tr>
-      <tr><td>May 4 — 10:37 AM</td><td>—</td><td style="color:var(--red)">263</td><td><span class="sugar-badge sd">Danger</span></td><td>2hr post-breakfast</td></tr>
+    <div style="overflow-x:auto">
+    <table id="sugar-table" style="min-width:520px">
+      <thead>
+        <tr><th>Date &amp; Time</th><th>Fasting (mg/dL)</th><th>Post-Meal (mg/dL)</th><th>Status</th><th>Notes</th><th style="width:36px"></th></tr>
+      </thead>
+      <tbody id="sugar-tbody">
+        <!-- Populated by JS from localStorage -->
+      </tbody>
     </table>
-    <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:6px;margin-top:12px;align-items:center">
-      <input class="s-input" id="inp-date" placeholder="Date (e.g. May 5)" />
-      <input class="s-input" id="inp-fast" placeholder="Fasting mg/dL" type="number"/>
-      <input class="s-input" id="inp-post" placeholder="Post-meal mg/dL" type="number"/>
-      <input class="s-input" id="inp-note" placeholder="Notes"/>
-      <button onclick="addLog()" style="background:var(--green);color:#fff;border:none;padding:9px 14px;border-radius:8px;cursor:pointer;font-size:.82rem;font-family:'DM Sans',sans-serif;white-space:nowrap">+ Add</button>
     </div>
-    <div style="display:flex;gap:10px;margin-top:10px;flex-wrap:wrap;font-size:.73rem">
-      <span class="sugar-badge sn">Normal: &lt;100 fasting / &lt;140 post-meal</span>
-      <span class="sugar-badge sp">Pre-DM: 100–125 / 140–199</span>
-      <span class="sugar-badge sh">High: 126–199 / 200–249</span>
-      <span class="sugar-badge sd">Danger: 200+ fasting / 250+ post-meal</span>
+
+    <!-- ADD ENTRY FORM -->
+    <div style="background:var(--green-p);border-radius:12px;padding:14px;margin-top:14px;border:1px solid #c8e6c9">
+      <div style="font-size:.78rem;font-weight:700;color:var(--green);margin-bottom:10px;text-transform:uppercase;letter-spacing:.5px">➕ Add New Reading</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:8px">
+        <div>
+          <label style="font-size:.72rem;color:var(--muted);font-weight:600;display:block;margin-bottom:3px">📅 Date</label>
+          <input class="s-input" id="inp-date" type="date" style="background:#fff"/>
+        </div>
+        <div>
+          <label style="font-size:.72rem;color:var(--muted);font-weight:600;display:block;margin-bottom:3px">🕐 Time</label>
+          <input class="s-input" id="inp-time" type="time" style="background:#fff"/>
+        </div>
+        <div>
+          <label style="font-size:.72rem;color:var(--muted);font-weight:600;display:block;margin-bottom:3px">📝 Notes</label>
+          <input class="s-input" id="inp-note" placeholder="e.g. Fasted morning, After lunch…" style="background:#fff"/>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr auto;gap:8px;align-items:flex-end">
+        <div>
+          <label style="font-size:.72rem;color:var(--muted);font-weight:600;display:block;margin-bottom:3px">🌅 Fasting Sugar (mg/dL)</label>
+          <input class="s-input" id="inp-fast" placeholder="e.g. 145" type="number" min="40" max="600" style="background:#fff"/>
+        </div>
+        <div>
+          <label style="font-size:.72rem;color:var(--muted);font-weight:600;display:block;margin-bottom:3px">🍽️ Post-Meal Sugar (mg/dL)</label>
+          <input class="s-input" id="inp-post" placeholder="e.g. 210" type="number" min="40" max="600" style="background:#fff"/>
+        </div>
+        <button id="sugar-save-btn" onclick="addLog()" style="background:var(--green);color:#fff;border:none;padding:10px 18px;border-radius:8px;cursor:pointer;font-size:.84rem;font-family:'DM Sans',sans-serif;font-weight:700;white-space:nowrap;height:38px">+ Save</button>
+      </div>
     </div>
+
+    <!-- LEGEND -->
+    <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;font-size:.72rem">
+      <span class="sugar-badge sn">✅ Normal: &lt;100 / &lt;140</span>
+      <span class="sugar-badge sp">⚠️ Pre-DM: 100–125 / 140–199</span>
+      <span class="sugar-badge sh">🔴 High: 126–199 / 200–249</span>
+      <span class="sugar-badge sd">🚨 Danger: 200+ / 250+</span>
+    </div>
+
+    <!-- AVERAGES PANEL -->
+    <div id="sugar-averages" style="margin-top:14px"></div>
   </div>
   <div class="card">
     <div class="card-title">🎯 Clinical Sugar Targets — ADA 2024 Standard</div>
@@ -1401,25 +1432,168 @@ function showBA(which) {
   ba.className = 'ba-btn' + (which === 'after' ? ' aa' : '');
 }
 
-// ── SUGAR LOG ──
-function getSugarStatus(f, p) {
-  const fv = parseFloat(f)||0, pv = parseFloat(p)||0;
-  const mv = Math.max(fv, pv);
-  if (mv >= 250 || fv >= 200) return '<span class="sugar-badge sd">Danger</span>';
-  if (mv >= 200 || fv >= 126) return '<span class="sugar-badge sh">High</span>';
-  if (mv >= 140 || fv >= 100) return '<span class="sugar-badge sp">Pre-DM</span>';
-  return '<span class="sugar-badge sn">Normal ✅</span>';
+// ═══════════════════════════════════════════
+// SUGAR LOG — Persistent with localStorage
+// ═══════════════════════════════════════════
+const SUGAR_KEY = 'zSugarLog_v3';
+
+// Initial seeded readings — saved to localStorage on very first load
+const SEEDED_ENTRIES = [
+  { date:'2025-05-03', time:'11:39', fast:'157', post:'',  note:'Fasted morning',    ts:1 },
+  { date:'2025-05-03', time:'14:22', fast:'',    post:'204', note:'2hr post-breakfast', ts:2 },
+  { date:'2025-05-04', time:'07:22', fast:'200', post:'',  note:'Fasted morning',    ts:3 },
+  { date:'2025-05-04', time:'10:37', fast:'',    post:'263', note:'2hr post-breakfast', ts:4 },
+];
+
+function sortEntries(arr) {
+  return arr.slice().sort((a, b) => {
+    const dtA = new Date((a.date || '1970-01-01') + 'T' + (a.time || '00:00') + ':00');
+    const dtB = new Date((b.date || '1970-01-01') + 'T' + (b.time || '00:00') + ':00');
+    return dtB - dtA; // newest first
+  });
 }
+
+function getSugarEntries() {
+  try { return JSON.parse(localStorage.getItem(SUGAR_KEY)) || []; }
+  catch(e) { return []; }
+}
+
+function saveSugarEntries(arr) {
+  localStorage.setItem(SUGAR_KEY, JSON.stringify(arr));
+}
+
+function getSugarStatusData(fv, pv) {
+  if ((fv && fv >= 200) || (pv && pv >= 250)) return { cls:'sd', label:'🚨 Danger' };
+  if ((fv && fv >= 126) || (pv && pv >= 200)) return { cls:'sh', label:'🔴 High' };
+  if ((fv && fv >= 100) || (pv && pv >= 140)) return { cls:'sp', label:'⚠️ Pre-DM' };
+  return { cls:'sn', label:'✅ Normal' };
+}
+
+function fmtDateTime(dateStr, timeStr) {
+  if (!dateStr) return '—';
+  const d = new Date(dateStr + 'T00:00:00');
+  const datePart = d.toLocaleDateString('en-PK', { day:'numeric', month:'short', year:'numeric' });
+  if (!timeStr) return datePart;
+  // Format time nicely: "14:22" → "2:22 PM"
+  const [hh, mm] = timeStr.split(':').map(Number);
+  const ampm = hh >= 12 ? 'PM' : 'AM';
+  const hr12 = hh % 12 || 12;
+  return `${datePart} · ${hr12}:${String(mm).padStart(2,'0')} ${ampm}`;
+}
+
+function buildSugarRow(entry, idx) {
+  const fv = parseFloat(entry.fast) || 0;
+  const pv = parseFloat(entry.post) || 0;
+  const st = getSugarStatusData(fv || null, pv || null);
+
+  const fCell = entry.fast
+    ? `<td style="font-weight:700;color:${fv>=200?'var(--red)':fv>=126?'var(--amber)':'var(--green)'}">${entry.fast}</td>`
+    : `<td style="color:var(--muted)">—</td>`;
+  const pCell = entry.post
+    ? `<td style="font-weight:700;color:${pv>=250?'var(--red)':pv>=200?'var(--amber)':'var(--green)'}">${entry.post}</td>`
+    : `<td style="color:var(--muted)">—</td>`;
+
+  return `<tr>
+    <td style="font-weight:600;font-size:.82rem">${fmtDateTime(entry.date, entry.time)}</td>
+    ${fCell}
+    ${pCell}
+    <td><span class="sugar-badge ${st.cls}">${st.label}</span></td>
+    <td style="color:var(--muted);font-size:.8rem">${entry.note || '—'}</td>
+    <td><button onclick="deleteLog(${idx})" title="Delete" style="background:var(--red-p);color:var(--red);border:none;border-radius:6px;width:26px;height:26px;cursor:pointer;font-size:.9rem;line-height:1">✕</button></td>
+  </tr>`;
+}
+
+function renderSugarTable() {
+  const entries = sortEntries(getSugarEntries());
+  const tbody = document.getElementById('sugar-tbody');
+  if (!tbody) return;
+  // Always render all entries from localStorage (never touch static HTML rows)
+  tbody.innerHTML = entries.length > 0
+    ? entries.map((e, i) => buildSugarRow(e, i)).join('')
+    : `<tr><td colspan="6" style="text-align:center;color:var(--muted);padding:20px;font-size:.85rem">No readings yet. Add your first entry below.</td></tr>`;
+  renderSugarAverages(entries);
+}
+
 function addLog() {
-  const d = document.getElementById('inp-date').value.trim();
+  const d = document.getElementById('inp-date').value;
+  const t = document.getElementById('inp-time').value;
   const f = document.getElementById('inp-fast').value.trim();
   const p = document.getElementById('inp-post').value.trim();
   const n = document.getElementById('inp-note').value.trim();
-  if (!d || (!f && !p)) { alert('Enter date and at least one glucose value.'); return; }
-  const t = document.getElementById('sugar-table');
-  const r = t.insertRow(t.rows.length - 1);
-  r.innerHTML = `<td>${d}</td><td>${f||'—'}</td><td>${p||'—'}</td><td>${getSugarStatus(f,p)}</td><td>${n||'—'}</td>`;
-  ['inp-date','inp-fast','inp-post','inp-note'].forEach(id => document.getElementById(id).value='');
+
+  if (!d) { alert('Please select a date.'); return; }
+  if (!f && !p) { alert('Enter at least one glucose value (Fasting or Post-Meal).'); return; }
+
+  // Get existing entries, add new one, sort by date+time descending, save
+  const entries = getSugarEntries();
+  entries.push({ date: d, time: t, fast: f, post: p, note: n, ts: Date.now() });
+  saveSugarEntries(sortEntries(entries));
+  renderSugarTable();
+
+  // Flash the Save button green
+  const saveBtn = document.getElementById('sugar-save-btn');
+  if (saveBtn) {
+    saveBtn.textContent = '✓ Saved!';
+    saveBtn.style.background = '#155d38';
+    setTimeout(() => { saveBtn.textContent = '+ Save'; saveBtn.style.background = ''; }, 1800);
+  }
+
+  // Reset form — keep date & time at current values for quick consecutive entries
+  const now = new Date();
+  document.getElementById('inp-fast').value = '';
+  document.getElementById('inp-post').value = '';
+  document.getElementById('inp-note').value = '';
+}
+
+function deleteLog(idx) {
+  if (!confirm('Delete this reading?')) return;
+  // idx refers to position in the sorted display — re-sort to get same order
+  const sorted = sortEntries(getSugarEntries());
+  sorted.splice(idx, 1);
+  saveSugarEntries(sorted);
+  renderSugarTable();
+}
+
+function renderSugarAverages(entries) {
+  const panel = document.getElementById('sugar-averages');
+  if (!panel) return;
+  if (entries.length === 0) { panel.innerHTML = ''; return; }
+
+  const fastVals = entries.map(e => parseFloat(e.fast)).filter(v => !isNaN(v) && v > 0);
+  const postVals = entries.map(e => parseFloat(e.post)).filter(v => !isNaN(v) && v > 0);
+  const allVals  = [...fastVals, ...postVals];
+
+  const avg = arr => arr.length ? Math.round(arr.reduce((a,b)=>a+b,0)/arr.length) : null;
+  const avgFast = avg(fastVals), avgPost = avg(postVals), avgAll = avg(allVals);
+  const maxAll  = allVals.length ? Math.max(...allVals) : null;
+  const minAll  = allVals.length ? Math.min(...allVals) : null;
+  // ADAG formula (ADA 2014): eHbA1c = (avgGlucose + 46.7) / 28.7
+  const estHba1c = avgAll ? ((avgAll + 46.7) / 28.7).toFixed(1) : null;
+
+  const statBox = (val, label, color) => `
+    <div style="background:rgba(255,255,255,.12);border-radius:10px;padding:12px;text-align:center">
+      <span style="font-size:1.5rem;font-weight:800;display:block;color:${color}">${val}</span>
+      <span style="font-size:.68rem;opacity:.85;margin-top:2px;display:block">${label}</span>
+    </div>`;
+
+  const fc = v => v >= 200 ? '#ff8a80' : v >= 126 ? '#ffcc80' : '#a5d6a7';
+  const pc = v => v >= 250 ? '#ff8a80' : v >= 200 ? '#ffcc80' : '#a5d6a7';
+  const hc = v => parseFloat(v) >= 9 ? '#ff8a80' : parseFloat(v) >= 7 ? '#ffcc80' : '#a5d6a7';
+
+  panel.innerHTML = `
+    <div style="background:linear-gradient(135deg,#0f4c2a,#1a7a4a);border-radius:14px;padding:16px 18px;color:#fff;margin-top:4px">
+      <div style="font-family:'Playfair Display',serif;font-size:1rem;font-weight:700;margin-bottom:12px">📊 Blood Sugar Summary — ${entries.length} Reading${entries.length!==1?'s':''}</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(105px,1fr));gap:10px;margin-bottom:12px">
+        ${avgFast ? statBox(avgFast, 'Avg Fasting', fc(avgFast)) : ''}
+        ${avgPost ? statBox(avgPost, 'Avg Post-Meal', pc(avgPost)) : ''}
+        ${maxAll  ? statBox(maxAll,  'Highest Ever',  '#ff8a80') : ''}
+        ${minAll  ? statBox(minAll,  'Lowest Ever',   '#a5d6a7') : ''}
+        ${estHba1c ? statBox(estHba1c+'%', 'Est. HbA1c', hc(estHba1c)) : ''}
+      </div>
+      <div style="font-size:.72rem;opacity:.72;font-style:italic;line-height:1.5">
+        📌 Est. HbA1c uses the ADAG formula (ADA 2014) from your logged average glucose. It is an approximation — get actual HbA1c tested at a GRW lab (Rs 600–900). Target: &lt;7.0% · Current ADA management target: 80–130 fasting / &lt;180 post-meal.
+      </div>
+    </div>`;
 }
 
 // ── ANIMATE PROGRESS BARS ──
@@ -1445,6 +1619,26 @@ document.querySelectorAll('.chk').forEach(chk => {
 // INIT
 // ═══════════════════════════════════════════
 document.addEventListener('DOMContentLoaded', function() {
+  // ── Seed initial readings to localStorage on very first load ──
+  // This ensures they persist and don't vanish when new entries are added
+  if (!localStorage.getItem(SUGAR_KEY)) {
+    saveSugarEntries(sortEntries(SEEDED_ENTRIES));
+  }
+
+  // Set today's date and current time as defaults in the form
+  const now = new Date();
+  const todayStr = now.toISOString().split('T')[0];
+  const hh = String(now.getHours()).padStart(2,'0');
+  const mm = String(now.getMinutes()).padStart(2,'0');
+  const datePicker = document.getElementById('inp-date');
+  const timePicker = document.getElementById('inp-time');
+  if (datePicker) datePicker.value = todayStr;
+  if (timePicker) timePicker.value = `${hh}:${mm}`;
+
+  // Load & render sugar log
+  renderSugarTable();
+
+  // Diet plan init
   updateDietWeekHeader();
   buildDietDayTabs();
   buildDietDayPanels();
