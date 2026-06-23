@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Health Recovery Plan</title>
+<title>Health Recovery Plan · Gujranwala</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -158,6 +158,7 @@ tr:last-child td{border-bottom:none}
 .ba-toggle{display:flex;border-radius:30px;overflow:hidden;width:240px;margin:0 auto 20px;border:2px solid #eee}
 .ba-btn{flex:1;padding:10px;text-align:center;font-weight:600;font-size:.83rem;cursor:pointer;transition:all .3s;background:#f5f5f5;color:var(--muted);border:none;font-family:'DM Sans',sans-serif}
 .ba-btn.ab{background:#ffd5d5;color:#c0392b}
+.ba-btn.an{background:#ffe9c2;color:#a86b00}
 .ba-btn.aa{background:#d4edda;color:#1a7a4a}
 .ba-panel{display:none}
 .ba-panel.active{display:block}
@@ -338,6 +339,7 @@ tr:last-child td{border-bottom:none}
   <p>Personalised · Gujranwala · Fatty Liver · Type 2 Diabetes · Obesity · Quit Smoking</p>
   <div class="urdu-sub">آپ کی صحت کا مکمل طبی منصوبہ — گوجرانوالہ</div>
   <div class="research-badge">📚 Based on ADA 2024 · AACE 2026 · AGA · PubMed Clinical Evidence</div>
+  <div class="research-badge" style="margin-top:6px;background:rgba(255,255,255,.22)">🧪 Updated with Lab Results — 22 Jun 2026 (Punjab Institute of Cardiology, Lahore)</div>
 </header>
 
 <div class="tabs">
@@ -349,6 +351,7 @@ tr:last-child td{border-bottom:none}
   <button class="tab-btn" onclick="showTab('exercise',this)">🏃 Exercise</button>
   <button class="tab-btn" onclick="showTab('routine',this)">📅 Daily Plan</button>
   <button class="tab-btn" onclick="showTab('liver',this)">🫀 Liver</button>
+  <button class="tab-btn" onclick="showTab('thyroid',this)">🦋 Thyroid</button>
   <button class="tab-btn" onclick="showTab('skin',this)">⚕️ Skin (HS)</button>
   <button class="tab-btn" onclick="showTab('quit',this)">🚭 Smoking</button>
 </div>
@@ -360,21 +363,42 @@ tr:last-child td{border-bottom:none}
   <div class="alert alert-red">
     <span class="alert-icon">🚨</span>
     <div>
-      <h3>URGENT: You Have Type 2 Diabetes — Confirmed</h3>
-      <p>Per <strong>ADA 2024 & AACE 2026 Guidelines</strong>, a fasting plasma glucose ≥126 mg/dL confirms Type 2 Diabetes. Your fasting glucose today is <strong>200 mg/dL</strong> — this is not borderline, this is active diabetes. Post-meal 263 mg/dL is in the dangerous range. <strong>Priority actions this week:</strong> (1) Get HbA1c test — Rs 600–800 at any GRW lab, (2) Do NOT stop Glucophage, (3) See a doctor to review dose. Diet alone cannot control glucose at 200+ fasting without medication.</p>
+      <h3>MOST URGENT — NEW: Severe Hypothyroidism Just Found (TSH 150)</h3>
+      <p>Your 23-Jun-2026 Thyroid Profile shows <strong>TSH 150 uIU/ml</strong> (normal 0.55–4.78) with <strong>low FT4 (7.98)</strong> and <strong>low FT3 (2.48)</strong>. This is severe, overt primary hypothyroidism — not a borderline or "subclinical" result. A TSH this high needs a doctor visit <strong>this week</strong>, not next month. Untreated severe hypothyroidism can itself worsen your weight, cholesterol, and energy levels — some of what looks like "metabolic syndrome" may partly be your thyroid. <strong>If you currently have any of: severe swelling of the face/legs, extreme cold intolerance, confusion, very slow pulse, or you become very difficult to wake — go to an emergency room now, these can signal a rare but serious complication (myxedema).</strong> Otherwise, see a physician or endocrinologist urgently for levothyroxine (thyroid hormone replacement) — this is a well-understood, very treatable condition.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-red">
+    <span class="alert-icon">🚨</span>
+    <div>
+      <h3>Type 2 Diabetes — Now Fully Confirmed (HbA1c 9.7%)</h3>
+      <p>Per <strong>ADA 2024 & AACE 2026 Guidelines</strong>, HbA1c ≥6.5% confirms Type 2 Diabetes. Your HbA1c is <strong>9.7%</strong> (avg glucose ~232 mg/dL over 3 months) and fasting glucose is <strong>171 mg/dL</strong> — improved from 200 mg/dL in May 2025, but still well above target. <strong>Priority actions:</strong> (1) Do NOT stop Glucophage, (2) See your doctor about whether a 2nd diabetes medicine is needed — HbA1c ≥9% often needs combination therapy, (3) Your new hypothyroidism diagnosis also needs to be treated, since untreated hypothyroidism makes blood sugar and lipids harder to control.</p>
+    </div>
+  </div>
+
+  <div class="alert alert-amber">
+    <span class="alert-icon">☀️</span>
+    <div>
+      <h3>Severe Vitamin D Deficiency (9.59 ng/ml)</h3>
+      <p>Your Vitamin D level is <strong>9.59 ng/ml</strong> — well into the "deficient" range (deficient is &lt;20, sufficient is 30–100). This is linked to fatigue, muscle weakness, bone pain, and can worsen insulin resistance. Ask your doctor about a high-dose replacement course (commonly a weekly prescription dose for 8–12 weeks, then a maintenance dose) — this is simple and inexpensive to correct.</p>
     </div>
   </div>
 
   <div class="stats-grid">
     <div class="stat-box bad"><span class="stat-num">115 kg</span><span class="stat-label">Current Weight</span></div>
     <div class="stat-box bad"><span class="stat-num">39.8</span><span class="stat-label">BMI (Obese Class II)</span></div>
-    <div class="stat-box bad"><span class="stat-num">200</span><span class="stat-label">Fasting Sugar mg/dL</span></div>
-    <div class="stat-box bad"><span class="stat-num">263</span><span class="stat-label">Post-Meal Sugar mg/dL</span></div>
+    <div class="stat-box bad"><span class="stat-num">171</span><span class="stat-label">Fasting Sugar mg/dL</span></div>
+    <div class="stat-box bad"><span class="stat-num">9.7%</span><span class="stat-label">HbA1c (Confirmed Diabetic)</span></div>
+    <div class="stat-box bad"><span class="stat-num">150</span><span class="stat-label">TSH uIU/ml (Severe Hypothyroid)</span></div>
+    <div class="stat-box bad"><span class="stat-num">9.59</span><span class="stat-label">Vitamin D ng/ml (Deficient)</span></div>
+    <div class="stat-box warn"><span class="stat-num">112 / 67</span><span class="stat-label">ALT / AST U/L (Elevated)</span></div>
+    <div class="stat-box warn"><span class="stat-num">258 / 137</span><span class="stat-label">Triglycerides / LDL mg/dL</span></div>
     <div class="stat-box warn"><span class="stat-num">~12 yrs</span><span class="stat-label">Smoking (since 2013)</span></div>
     <div class="stat-box warn"><span class="stat-num">NAFLD</span><span class="stat-label">Fatty Liver</span></div>
     <div class="stat-box warn"><span class="stat-num">HS</span><span class="stat-label">Skin Condition</span></div>
     <div class="stat-box blue"><span class="stat-num">90 kg</span><span class="stat-label">Weight Goal</span></div>
   </div>
+  <div class="research-note" style="margin-bottom:14px">🧪 Latest labs: Punjab Institute of Cardiology, Lahore — 22–23 Jun 2026. Kidneys, electrolytes, calcium, magnesium, uric acid, Hepatitis B & C screening all came back normal.</div>
 
   <div class="card">
     <div class="card-title">🔗 How Your Conditions Are All Connected — The Metabolic Syndrome</div>
@@ -382,7 +406,8 @@ tr:last-child td{border-bottom:none}
     <div class="timeline">
       <div class="tl-item"><div class="tl-dot red"></div><div class="tl-year">Root Cause</div><div class="tl-text"><strong>Visceral Obesity (115 kg, BMI 39.8)</strong> — Excess fat, especially around the belly, produces inflammatory chemicals. This is the foundation of all your other problems.</div></div>
       <div class="tl-item"><div class="tl-dot red"></div><div class="tl-year">Liver</div><div class="tl-text"><strong>Fatty Liver (NAFLD)</strong> — Fat from visceral obesity deposits directly into the liver cells, raising ALT. NAFLD worsens insulin resistance and increases T2D risk by 5x.</div></div>
-      <div class="tl-item"><div class="tl-dot red"></div><div class="tl-year">Diabetes</div><div class="tl-text"><strong>Type 2 Diabetes (Fasting 200)</strong> — Insulin resistance from obesity + NAFLD has overwhelmed your pancreas. Nicotine from smoking reduces insulin sensitivity by a further <strong>10–40%</strong>.</div></div>
+      <div class="tl-item"><div class="tl-dot red"></div><div class="tl-year">Diabetes</div><div class="tl-text"><strong>Type 2 Diabetes (HbA1c 9.7%)</strong> — Insulin resistance from obesity + NAFLD has overwhelmed your pancreas. Nicotine from smoking reduces insulin sensitivity by a further <strong>10–40%</strong>.</div></div>
+      <div class="tl-item"><div class="tl-dot red"></div><div class="tl-year">Thyroid</div><div class="tl-text"><strong>Severe Hypothyroidism (TSH 150)</strong> — A newly found, separate condition. Low thyroid hormone slows metabolism, raises cholesterol/triglycerides, and makes weight loss and blood sugar control harder. Treating it with levothyroxine should make every other goal easier to reach.</div></div>
       <div class="tl-item"><div class="tl-dot amber"></div><div class="tl-year">Skin</div><div class="tl-text"><strong>Hidradenitis Suppurativa (HS)</strong> — HS has an OR of 6.38 for diabetes and 3.62 for obesity. It is driven by the same insulin resistance causing your T2D.</div></div>
       <div class="tl-item"><div class="tl-dot amber"></div><div class="tl-year">Smoking</div><div class="tl-text"><strong>Smoking since 2013</strong> — Nicotine activates PKC-NF-κB pathways that directly cause insulin resistance. It is <em>actively making your blood sugar harder to control</em>.</div></div>
       <div class="tl-item"><div class="tl-dot green"></div><div class="tl-year">The Solution</div><div class="tl-text"><strong>One effort heals everything.</strong> A 10% weight loss (−11.5 kg) will reverse NAFLD by 50–80%, significantly improve insulin sensitivity, reduce HS flare-ups, and lower blood sugar substantially.</div></div>
@@ -390,16 +415,35 @@ tr:last-child td{border-bottom:none}
   </div>
 
   <div class="card">
-    <div class="card-title">🎯 Your 5 Clinical Goals (Evidence-Based Targets)</div>
+    <div class="card-title">🎯 Your Clinical Goals (Evidence-Based Targets)</div>
     <table>
       <tr><th>Goal</th><th>Current Status</th><th>Target</th><th>Timeline</th></tr>
-      <tr><td><strong>Fasting Blood Sugar</strong></td><td style="color:var(--red)">200 mg/dL 🔴</td><td>&lt;130 mg/dL</td><td>3–6 months</td></tr>
-      <tr><td><strong>HbA1c (3-month avg)</strong></td><td style="color:var(--muted)">Unknown — get tested</td><td>&lt;7.0%</td><td>6 months</td></tr>
+      <tr><td><strong>TSH (Thyroid)</strong></td><td style="color:var(--red)">150 uIU/ml 🔴</td><td>0.55–4.78 uIU/ml</td><td>Start treatment this week</td></tr>
+      <tr><td><strong>HbA1c (3-month avg)</strong></td><td style="color:var(--red)">9.7% 🔴 Confirmed</td><td>&lt;7.0%</td><td>6 months</td></tr>
+      <tr><td><strong>Fasting Blood Sugar</strong></td><td style="color:var(--red)">171 mg/dL 🔴</td><td>&lt;130 mg/dL</td><td>3–6 months</td></tr>
       <tr><td><strong>Body Weight</strong></td><td style="color:var(--red)">115 kg 🔴</td><td>90 kg (−25 kg)</td><td>9–12 months</td></tr>
-      <tr><td><strong>ALT (Liver Enzyme)</strong></td><td style="color:var(--amber)">Elevated 🟠</td><td>Normal (&lt;40 IU/L)</td><td>6–12 months</td></tr>
+      <tr><td><strong>ALT / AST (Liver)</strong></td><td style="color:var(--red)">112 / 67 🔴 Worsened</td><td>Normal (&lt;50 IU/L)</td><td>6–12 months</td></tr>
+      <tr><td><strong>Lipid Profile</strong></td><td style="color:var(--red)">TG 258, LDL 137 🔴</td><td>TG&lt;150, LDL&lt;130</td><td>6 months</td></tr>
+      <tr><td><strong>Vitamin D</strong></td><td style="color:var(--amber)">9.59 ng/ml 🟠 Deficient</td><td>30–100 ng/ml</td><td>3 months</td></tr>
       <tr><td><strong>Smoking</strong></td><td style="color:var(--red)">Active 🔴</td><td>Zero cigarettes</td><td>4 months</td></tr>
     </table>
-    <div class="research-note">📚 Targets based on ADA Standards of Medical Care 2024, AACE 2026 Algorithm, and AGA NAFLD Guidelines 2023.</div>
+    <div class="research-note">📚 Targets based on ADA Standards of Medical Care 2024, AACE 2026 Algorithm, AGA NAFLD Guidelines 2023, and ATA Hypothyroidism Guidelines.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">📋 Lab Trend — May 2025 vs Jun 2026</div>
+    <table>
+      <tr><th>Test</th><th>May 2025</th><th>Jun 2026</th><th>Direction</th></tr>
+      <tr><td>Fasting Glucose</td><td>200 mg/dL</td><td>171 mg/dL</td><td style="color:var(--green)">↓ improved, still high</td></tr>
+      <tr><td>HbA1c</td><td>Not tested</td><td style="color:var(--red)">9.7%</td><td>New — confirms diabetes</td></tr>
+      <tr><td>ALT (SGPT)</td><td>Elevated (exact value not on file)</td><td style="color:var(--red)">112 U/L</td><td>↑ worse</td></tr>
+      <tr><td>AST (SGOT)</td><td>Not tested</td><td style="color:var(--red)">67 U/L</td><td>New — elevated</td></tr>
+      <tr><td>Thyroid (TSH/FT3/FT4)</td><td>Not tested</td><td style="color:var(--red)">TSH 150 — severe hypothyroid</td><td>New diagnosis</td></tr>
+      <tr><td>Vitamin D</td><td>Not tested</td><td style="color:var(--amber)">9.59 ng/ml — deficient</td><td>New finding</td></tr>
+      <tr><td>Lipid Profile</td><td>Not tested</td><td style="color:var(--red)">TG 258, LDL 137, HDL 36</td><td>New — needs treatment</td></tr>
+      <tr><td>Hep B / Hep C</td><td>Not tested</td><td style="color:var(--green)">Both Negative</td><td>✅ Good news</td></tr>
+      <tr><td>Kidneys / Electrolytes / Calcium / Magnesium / Uric Acid</td><td>Not tested</td><td style="color:var(--green)">All Normal</td><td>✅ Good news</td></tr>
+    </table>
   </div>
 
   <div class="card">
@@ -413,6 +457,8 @@ tr:last-child td{border-bottom:none}
       <div class="comp-box comp-warn"><h4>🫀 Liver Cirrhosis</h4><p>NAFLD → NASH → Fibrosis → Cirrhosis. Diabetes + obesity accelerates progression.</p></div>
       <div class="comp-box comp-watch"><h4>💊 Insulin Dependence</h4><p>Uncontrolled T2D for 5+ years often requires daily insulin injections. Still preventable now.</p></div>
       <div class="comp-box comp-watch"><h4>🩹 HS Worsening</h4><p>Metabolic syndrome drives HS flare-ups. Diabetes makes wound healing worse after abscesses.</p></div>
+      <div class="comp-box comp-serious"><h4>🦋 Myxedema (Severe Hypothyroid Emergency)</h4><p>Untreated severe hypothyroidism (TSH 150) can rarely progress to myxedema coma — low body temperature, confusion, slow heart rate. Levothyroxine treatment prevents this entirely.</p></div>
+      <div class="comp-box comp-warn"><h4>❤️ Heart Strain from Low Thyroid</h4><p>Severe hypothyroidism raises LDL/triglycerides and can slow the heart rate, compounding your existing cardiovascular risk from diabetes and smoking.</p></div>
     </div>
     <div class="alert alert-green" style="margin-top:14px;margin-bottom:0">
       <span class="alert-icon">💪</span>
@@ -426,10 +472,11 @@ tr:last-child td{border-bottom:none}
 <div id="progress" class="section">
   <div class="section-heading">🎯 Before & After — Your Transformation Map</div>
   <div class="ba-toggle">
-    <button class="ba-btn ab" id="btn-before" onclick="showBA('before')">BEFORE</button>
+    <button class="ba-btn" id="btn-before" onclick="showBA('before')">BEFORE (May '25)</button>
+    <button class="ba-btn an" id="btn-now" onclick="showBA('now')">NOW (Jun '26)</button>
     <button class="ba-btn" id="btn-after" onclick="showBA('after')">GOAL</button>
   </div>
-  <div class="ba-panel active" id="ba-before">
+  <div class="ba-panel" id="ba-before">
     <div class="card">
       <div class="card-title">📍 Current Status — May 2025</div>
       <div class="stats-grid">
@@ -448,6 +495,26 @@ tr:last-child td{border-bottom:none}
         <span class="alert-icon">⚠️</span>
         <div><h3>Active Conditions Right Now</h3>
         <p>Type 2 Diabetes (uncontrolled) · NAFLD (fatty liver) · Obesity Class II · Hidradenitis Suppurativa · Active smoker since 2013 · Insulin resistance</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="ba-panel active" id="ba-now">
+    <div class="card">
+      <div class="card-title">📍 Latest Labs — 22/23 Jun 2026 (Punjab Institute of Cardiology)</div>
+      <div class="stats-grid">
+        <div class="stat-box bad"><span class="stat-num">171</span><span class="stat-label">Fasting Sugar mg/dL</span></div>
+        <div class="stat-box bad"><span class="stat-num">9.7%</span><span class="stat-label">HbA1c (Confirmed Diabetic)</span></div>
+        <div class="stat-box bad"><span class="stat-num">150</span><span class="stat-label">TSH uIU/ml (Severe Hypothyroid)</span></div>
+        <div class="stat-box warn"><span class="stat-num">112 / 67</span><span class="stat-label">ALT / AST U/L</span></div>
+        <div class="stat-box warn"><span class="stat-num">258 / 137</span><span class="stat-label">Triglycerides / LDL mg/dL</span></div>
+        <div class="stat-box warn"><span class="stat-num">9.59</span><span class="stat-label">Vitamin D ng/ml (Deficient)</span></div>
+      </div>
+      <div class="progress-label"><span>Fasting Sugar vs May 2025 (200 → 171)</span><span style="color:var(--amber)">🟠 Improving, still high</span></div>
+      <div class="progress-bar"><div class="progress-fill warn" style="width:55%"></div></div>
+      <div class="alert alert-amber" style="margin-top:12px;margin-bottom:0">
+        <span class="alert-icon">🧪</span>
+        <div><h3>What's New Since May 2025</h3>
+        <p>Fasting sugar improved a little (200 → 171) but HbA1c confirms diabetes is still not controlled (9.7%, goal &lt;7%). Liver enzymes and cholesterol have gotten worse, not better. Two brand-new findings appeared on this full panel: <strong>severe hypothyroidism (TSH 150)</strong> and <strong>severe Vitamin D deficiency (9.59 ng/ml)</strong> — both very treatable, and both likely contributing to the higher cholesterol and liver numbers. Kidneys, electrolytes, calcium, magnesium, uric acid, and Hepatitis B/C screening are all normal — genuinely good news.</p></div>
       </div>
     </div>
   </div>
@@ -477,7 +544,8 @@ tr:last-child td{border-bottom:none}
     <div class="card-title">📈 Monthly Progress Tracker — Fill Every Week</div>
     <table>
       <tr><th>Month</th><th>Weight Target</th><th>Fasting Sugar Target</th><th>Your Weight</th><th>Your Fasting Sugar</th></tr>
-      <tr><td><strong>Start (Now)</strong></td><td>115 kg</td><td>200 mg/dL</td><td style="color:var(--red)">115 kg</td><td style="color:var(--red)">200 mg/dL</td></tr>
+      <tr><td><strong>Start — May 2025</strong></td><td>115 kg</td><td>200 mg/dL</td><td style="color:var(--red)">115 kg</td><td style="color:var(--red)">200 mg/dL</td></tr>
+      <tr><td><strong>Jun 2026 (Latest Labs)</strong></td><td>—</td><td>—</td><td style="color:var(--muted)">___ (update on next weigh-in)</td><td style="color:var(--amber)">171 mg/dL · HbA1c 9.7%</td></tr>
       <tr><td>Month 1</td><td>112 kg</td><td>175 mg/dL</td><td>___</td><td>___</td></tr>
       <tr><td>Month 2</td><td>109 kg</td><td>160 mg/dL</td><td>___</td><td>___</td></tr>
       <tr><td>Month 3</td><td>106 kg</td><td>145 mg/dL</td><td>___</td><td>___</td></tr>
@@ -548,9 +616,9 @@ tr:last-child td{border-bottom:none}
     <div class="card-title">🎯 Clinical Sugar Targets — ADA 2024 Standard</div>
     <table>
       <tr><th>Measurement</th><th>Your Reading</th><th>Management Target</th><th>Long-term Goal</th></tr>
-      <tr><td>Fasting glucose (morning)</td><td style="color:var(--red)"><strong>200 mg/dL</strong></td><td style="color:var(--amber)">80–130 mg/dL</td><td style="color:var(--green)">&lt;100 mg/dL</td></tr>
-      <tr><td>Post-meal 2hr glucose</td><td style="color:var(--red)"><strong>263 mg/dL</strong></td><td style="color:var(--amber)">&lt;180 mg/dL</td><td style="color:var(--green)">&lt;140 mg/dL</td></tr>
-      <tr><td>HbA1c (3-month average)</td><td style="color:var(--muted)">Not tested yet</td><td style="color:var(--amber)">&lt;7.0%</td><td style="color:var(--green)">&lt;5.7%</td></tr>
+      <tr><td>Fasting glucose (morning)</td><td style="color:var(--red)"><strong>171 mg/dL</strong> (22-Jun-26)</td><td style="color:var(--amber)">80–130 mg/dL</td><td style="color:var(--green)">&lt;100 mg/dL</td></tr>
+      <tr><td>Post-meal 2hr glucose</td><td style="color:var(--muted)">263 mg/dL (last checked May 2025 — recheck and log here)</td><td style="color:var(--amber)">&lt;180 mg/dL</td><td style="color:var(--green)">&lt;140 mg/dL</td></tr>
+      <tr><td>HbA1c (3-month average)</td><td style="color:var(--red)"><strong>9.7%</strong> (22-Jun-26)</td><td style="color:var(--amber)">&lt;7.0%</td><td style="color:var(--green)">&lt;5.7%</td></tr>
       <tr><td>Blood Pressure</td><td style="color:var(--muted)">Check today</td><td style="color:var(--amber)">&lt;140/90</td><td style="color:var(--green)">&lt;130/80</td></tr>
     </table>
   </div>
@@ -573,16 +641,29 @@ tr:last-child td{border-bottom:none}
     </div>
   </div>
   <div class="card">
-    <div class="card-title">🧪 Tests You Must Get Done — Gujranwala Labs</div>
+    <div class="card-title">🧪 Tests — Status as of Jun 2026</div>
     <table>
-      <tr><th>Test</th><th>Why Critical</th><th>Frequency</th><th>GRW Cost</th></tr>
-      <tr><td><strong>HbA1c ⭐ FIRST</strong></td><td>3-month average sugar. Confirms severity. Tracks treatment.</td><td>Every 3 months</td><td>Rs 600–900</td></tr>
-      <tr><td>Fasting Blood Glucose</td><td>Daily monitoring at home. Get a glucometer.</td><td>Daily (home)</td><td>Strip ~Rs 20</td></tr>
-      <tr><td>ALT / AST / GGT</td><td>Liver enzyme panel — tracks fatty liver progress</td><td>Every 3 months</td><td>Rs 500–800</td></tr>
-      <tr><td>Lipid Profile</td><td>Diabetes + high cholesterol = high heart attack risk</td><td>Every 6 months</td><td>Rs 900–1200</td></tr>
-      <tr><td>Kidney Function</td><td>Diabetes can silently damage kidneys for years</td><td>Every 6 months</td><td>Rs 500–700</td></tr>
-      <tr><td>Blood Pressure</td><td>Diabetes + high BP = major complications multiplier</td><td>Weekly at home</td><td>Cuff Rs 2,500</td></tr>
+      <tr><th>Test</th><th>Why Critical</th><th>Next Due</th><th>Status</th></tr>
+      <tr><td><strong>HbA1c</strong></td><td>3-month average sugar. Confirms severity. Tracks treatment.</td><td>~Sep 2026</td><td style="color:var(--green)">✅ Done — 9.7%</td></tr>
+      <tr><td>Fasting Blood Glucose</td><td>Daily monitoring at home. Get a glucometer.</td><td>Daily (home)</td><td style="color:var(--green)">✅ Done — 171</td></tr>
+      <tr><td>ALT / AST</td><td>Liver enzyme panel — tracks fatty liver progress</td><td>~Sep 2026</td><td style="color:var(--green)">✅ Done — 112 / 67</td></tr>
+      <tr><td>Lipid Profile</td><td>Diabetes + high cholesterol = high heart attack risk</td><td>~Dec 2026</td><td style="color:var(--green)">✅ Done — see Liver/Overview tab</td></tr>
+      <tr><td>Thyroid Profile (TSH/FT3/FT4)</td><td>Confirms hypothyroidism, guides levothyroxine dose</td><td><strong>6–8 weeks after starting treatment</strong></td><td style="color:var(--green)">✅ Done — TSH 150</td></tr>
+      <tr><td>Vitamin D</td><td>Severely deficient — affects bones, muscles, energy</td><td>~3 months after starting supplement</td><td style="color:var(--green)">✅ Done — 9.59 (deficient)</td></tr>
+      <tr><td>Kidney Function / Electrolytes</td><td>Diabetes can silently damage kidneys for years</td><td>~Dec 2026</td><td style="color:var(--green)">✅ Done — Normal</td></tr>
+      <tr><td>Hepatitis B & C Screening</td><td>Rules out viral causes of raised liver enzymes</td><td>One-time, done</td><td style="color:var(--green)">✅ Done — Both Negative</td></tr>
+      <tr><td>Blood Pressure</td><td>Diabetes + high BP = major complications multiplier</td><td>Weekly at home</td><td style="color:var(--muted)">Not yet logged</td></tr>
+      <tr><td>Liver Ultrasound</td><td>Directly visualises liver fat — recommended given rising ALT/AST</td><td>Schedule soon</td><td style="color:var(--amber)">🟠 Not yet done</td></tr>
     </table>
+  </div>
+  <div class="card">
+    <div class="card-title">👨‍⚕️ Your Real Doctor Visit Checklist Right Now</div>
+    <ul class="tip-list">
+      <li><strong>This week:</strong> See a physician or endocrinologist about the TSH 150 result — you will very likely be started on levothyroxine tablets, usually once daily on an empty stomach.</li>
+      <li><strong>Same visit:</strong> Ask whether your Metformin dose needs adjusting now that HbA1c is confirmed at 9.7%, and whether a second diabetes medicine is needed.</li>
+      <li><strong>Same visit:</strong> Ask about a Vitamin D replacement course and whether a statin is appropriate given your triglycerides (258) and LDL (137).</li>
+      <li><strong>Mention the rising ALT/AST</strong> and ask if a liver ultrasound is needed now rather than later.</li>
+    </ul>
   </div>
 </div>
 
@@ -590,13 +671,36 @@ tr:last-child td{border-bottom:none}
 <div id="medicine" class="section">
   <div class="section-heading">💊 Your Medicines — What Science Says</div>
   <div class="alert alert-red">
+    <span class="alert-icon">🦋</span>
+    <div><h3>New: You Need a Doctor to Start Thyroid Treatment</h3>
+    <p>TSH 150 (normal up to 4.78) with low FT4 and FT3 means a doctor will almost certainly start you on <strong>Levothyroxine</strong> (brand names in Pakistan include Eltroxin, Thyrox). This is not on your current medicine list yet because the result just came in — get it prescribed this week.</p></div>
+  </div>
+  <div class="alert alert-red">
     <span class="alert-icon">🚨</span>
     <div><h3>Never Stop Glucophage Without a Doctor's Instruction</h3>
-    <p>Glucophage (Metformin) is the most researched diabetes drug in history — over 60 years of safety data. It is the <strong>first-line treatment in all major international guidelines</strong> (ADA 2024, AACE 2026, WHO). Stopping it when your fasting glucose is 200+ could be dangerous.</p></div>
+    <p>Glucophage (Metformin) is the most researched diabetes drug in history — over 60 years of safety data. It is the <strong>first-line treatment in all major international guidelines</strong> (ADA 2024, AACE 2026, WHO). Stopping it when your HbA1c is 9.7% could be dangerous.</p></div>
+  </div>
+  <div class="med-box">
+    <div class="med-name">🦋 Levothyroxine (Eltroxin / Thyrox) — To Be Prescribed</div>
+    <div class="med-dose">Dose is decided by your doctor based on weight and TSH severity — typically started low and rechecked every 6–8 weeks until TSH normalises</div>
+    <div class="alert alert-amber" style="margin-top:4px;margin-bottom:0">
+      <span class="alert-icon">⏰</span>
+      <div><h3>How Levothyroxine Must Be Taken (This Matters a Lot)</h3>
+      <ul style="padding-left:16px;font-size:.83rem;line-height:1.8">
+        <li>Take on an <strong>empty stomach, first thing in the morning</strong>, 30–60 minutes before any food, tea, or other medicine</li>
+        <li><strong>Do not take Calcium, Iron, or Magnesium supplements within 4 hours</strong> of levothyroxine — they block its absorption</li>
+        <li>Do not stop or change the dose yourself — it's adjusted slowly based on repeat TSH tests</li>
+        <li>Energy, weight, and mood usually start improving within a few weeks, but full correction can take a few months</li>
+      </ul></div>
+    </div>
+  </div>
+  <div class="med-box">
+    <div class="med-name">☀️ Vitamin D3 — To Be Prescribed</div>
+    <div class="med-dose">At 9.59 ng/ml (deficient), doctors commonly prescribe a high-dose weekly or monthly course for 8–12 weeks, then a smaller daily/weekly maintenance dose — exact dose is for your doctor to decide</div>
   </div>
   <div class="med-box">
     <div class="med-name">💊 Glucophage (Metformin) 500 mg</div>
-    <div class="med-dose">Current Dose: 500 mg · Ask doctor about increasing to 1000 mg twice daily</div>
+    <div class="med-dose">Current Dose: 500 mg · Ask doctor about increasing to 1000 mg twice daily, or adding a second agent — HbA1c 9.7% suggests current dose alone isn't enough</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:14px">
       <div style="background:#e3f2fd;border-radius:10px;padding:14px"><strong style="font-size:.85rem;color:#1565c0">🩸 For Diabetes</strong><p style="font-size:.8rem;margin-top:6px;line-height:1.6;color:#444">Reduces liver's glucose production. Improves insulin sensitivity. Lowers fasting glucose by 25–30% in most patients.</p><div class="research-note">📚 UKPDS Trial: Metformin reduces diabetes mortality by 36%, heart attacks by 39%.</div></div>
       <div style="background:#e8f5ee;border-radius:10px;padding:14px"><strong style="font-size:.85rem;color:#1a7a4a">🫀 For Fatty Liver</strong><p style="font-size:.8rem;margin-top:6px;line-height:1.6;color:#444">Pakistan-specific study (Jinnah Hospital, 2024/2025) of 185 patients found Metformin users had significantly lower ALT levels.</p><div class="research-note">📚 Source: PMC12449704 — Metformin users had lower mean ALT (41.3±14.6).</div></div>
@@ -626,16 +730,18 @@ tr:last-child td{border-bottom:none}
   <div class="card">
     <div class="card-title">🩺 What to Ask Your Doctor — Take This List</div>
     <ul class="tip-list">
-      <li><strong>"Should I increase Metformin to 1000 mg twice daily?"</strong> — Standard effective dose for T2D. 500 mg once daily is often insufficient for fasting glucose of 200+.</li>
-      <li><strong>"Do I need a second diabetes medicine?"</strong> — If HbA1c is ≥9%, SGLT2 inhibitors (Empagliflozin) benefit the liver and heart too.</li>
-      <li><strong>"Can you refer me for a liver ultrasound and ALT test?"</strong> — Baseline for NAFLD monitoring.</li>
+      <li><strong>"My TSH is 150, FT4 and FT3 are low — what dose of levothyroxine should I start, and when do you want to recheck it?"</strong></li>
+      <li><strong>"Should I increase Metformin, or add a second diabetes medicine?"</strong> — HbA1c at 9.7% often needs combination therapy. SGLT2 inhibitors (Empagliflozin) also benefit the liver and heart.</li>
+      <li><strong>"My triglycerides are 258 and LDL is 137 — do I need a statin or fibrate now?"</strong></li>
+      <li><strong>"My ALT and AST have risen to 112 and 67 — should I get a liver ultrasound now?"</strong></li>
+      <li><strong>"What dose and schedule of Vitamin D3 should I take for a level of 9.59?"</strong></li>
       <li><strong>"Do I need a referral to a dermatologist for my skin?"</strong> — Ask about doxycycline for active HS lesions.</li>
-      <li><strong>"Please check my blood pressure and kidney function today."</strong></li>
+      <li><strong>"Please check my blood pressure today."</strong></li>
     </ul>
     <div class="alert alert-blue" style="margin-top:12px;margin-bottom:0">
       <span class="alert-icon">🏥</span>
       <div><h3>Best Doctors in Gujranwala</h3>
-      <p>For diabetes + fatty liver: Consultant Physician / Endocrinologist at DHQ Hospital GRW or CMH Gujranwala. For skin (HS): Dermatology Dept, CMH or private skin clinic on G.T. Road. Ask specifically for "Hidradenitis Suppurativa."</p></div>
+      <p>For diabetes + thyroid + fatty liver: Consultant Physician / Endocrinologist at DHQ Hospital GRW or CMH Gujranwala — one endocrinologist visit can address diabetes, thyroid, and Vitamin D together. For skin (HS): Dermatology Dept, CMH or private skin clinic on G.T. Road. Ask specifically for "Hidradenitis Suppurativa."</p></div>
     </div>
   </div>
 </div>
@@ -916,6 +1022,11 @@ tr:last-child td{border-bottom:none}
 <!-- ═══════════════ LIVER ═══════════════ -->
 <div id="liver" class="section">
   <div class="section-heading">🫀 Fatty Liver (NAFLD) — Reversal Plan</div>
+  <div class="alert alert-amber">
+    <span class="alert-icon">📈</span>
+    <div><h3>Your Liver Numbers Have Risen — 22 Jun 2026</h3>
+    <p>ALT is now <strong>112 U/L</strong> and AST is <strong>67 U/L</strong> (both should be under 50). This is higher than your last check. Hepatitis B and C screening are both negative, so this rise is most likely from the fatty liver + uncontrolled diabetes + newly found severe hypothyroidism working together — all three directly affect liver enzymes. Your lipid profile is also abnormal: Triglycerides 258 mg/dL (target &lt;150), Total Cholesterol 209, LDL 137, HDL only 36. Treating the thyroid and diabetes together should help bring these numbers down alongside the weight-loss plan. Ask your doctor about a liver ultrasound at your next visit.</p></div>
+  </div>
   <div class="card">
     <div class="card-title">📚 What Science Says About Reversing Your Fatty Liver</div>
     <div class="alert alert-green" style="margin-bottom:10px">
@@ -932,13 +1043,17 @@ tr:last-child td{border-bottom:none}
     <div class="research-note">📚 Source: Guideline for the Prevention and Treatment of MAFLD (Version 2024), PMC11557364. Also: AGA Clinical Practice Update, Gastroenterology 2020.</div>
   </div>
   <div class="card">
-    <div class="card-title">🧪 Liver Monitoring Tests</div>
+    <div class="card-title">🧪 Liver & Lipid Monitoring — Latest Results</div>
     <table>
-      <tr><th>Test</th><th>Normal Range</th><th>Why You Need It</th><th>Frequency</th></tr>
-      <tr><td>ALT (SGPT)</td><td>&lt;40 IU/L</td><td>Primary liver inflammation marker. Your main tracking number.</td><td>Every 3 months</td></tr>
-      <tr><td>AST (SGOT)</td><td>&lt;40 IU/L</td><td>When AST &gt; ALT, it suggests more advanced liver disease.</td><td>Every 3 months</td></tr>
-      <tr><td>Ultrasound Abdomen</td><td>No echogenicity</td><td>Directly visualises liver fat. Track reversal annually.</td><td>Yearly</td></tr>
-      <tr><td>Fasting Glucose + HbA1c</td><td>&lt;100 / &lt;5.7%</td><td>Diabetes control directly determines liver recovery speed.</td><td>Every 3 months</td></tr>
+      <tr><th>Test</th><th>Normal Range</th><th>Your Result (22 Jun 2026)</th><th>Next Check</th></tr>
+      <tr><td>ALT (SGPT)</td><td>&lt;50 IU/L</td><td style="color:var(--red)">112 🔴</td><td>~3 months</td></tr>
+      <tr><td>AST (SGOT)</td><td>&lt;50 IU/L</td><td style="color:var(--red)">67 🔴</td><td>~3 months</td></tr>
+      <tr><td>Triglycerides</td><td>&lt;150 mg/dl</td><td style="color:var(--red)">258 🔴</td><td>~6 months</td></tr>
+      <tr><td>Total Cholesterol</td><td>&lt;200 mg/dl</td><td style="color:var(--red)">209 🔴</td><td>~6 months</td></tr>
+      <tr><td>LDL</td><td>&lt;130 mg/dl</td><td style="color:var(--red)">137 🔴</td><td>~6 months</td></tr>
+      <tr><td>HDL</td><td>35–55 mg/dl</td><td style="color:var(--amber)">36 🟠 (low end)</td><td>~6 months</td></tr>
+      <tr><td>Ultrasound Abdomen</td><td>No echogenicity</td><td style="color:var(--muted)">Not yet done</td><td>Schedule soon</td></tr>
+      <tr><td>Hepatitis B & C</td><td>Negative</td><td style="color:var(--green)">Negative ✅</td><td>One-time, done</td></tr>
     </table>
   </div>
   <div class="card">
@@ -947,9 +1062,59 @@ tr:last-child td{border-bottom:none}
       <li><strong>No Ibuprofen / Brufen / Diclofenac</strong> — hepatotoxic in fatty liver. Use Paracetamol minimum dose only.</li>
       <li><strong>No herbal liver tonics without doctor approval</strong> — many Pakistani jadi-buti medicines worsen NAFLD.</li>
       <li><strong>Haldi (Turmeric/Curcumin)</strong> — multiple studies show curcumin reduces liver inflammation and ALT levels in NAFLD. 1 tsp haldi doodh every night = free, effective liver therapy.</li>
-      <li><strong>Fish 2–3 times per week</strong> — Omega-3 fatty acids in rohu/tilapia reduce hepatic fat directly.</li>
+      <li><strong>Fish 2–3 times per week</strong> — Omega-3 fatty acids in rohu/tilapia reduce hepatic fat directly, and also help triglycerides.</li>
       <li><strong>Coffee (without sugar)</strong> — meta-analyses show 2–3 cups of black coffee daily are associated with lower ALT and slower NAFLD progression.</li>
+      <li><strong>Treat the thyroid</strong> — untreated severe hypothyroidism itself raises triglycerides and LDL and can elevate liver enzymes, so starting levothyroxine should help these numbers too.</li>
     </ul>
+  </div>
+</div>
+
+<!-- ═══════════════ THYROID ═══════════════ -->
+<div id="thyroid" class="section">
+  <div class="section-heading">🦋 Severe Hypothyroidism — New Diagnosis, 23 Jun 2026</div>
+  <div class="alert alert-red">
+    <span class="alert-icon">🚨</span>
+    <div><h3>TSH 150 — This Needs a Doctor This Week</h3>
+    <p>Your Thyroid Profile shows <strong>TSH 150 uIU/ml</strong> (normal 0.55–4.78), with <strong>low FT4 (7.98, normal 11.5–22.7)</strong> and <strong>low FT3 (2.48, normal 3.5–6.5)</strong>. This is the textbook pattern of severe, overt primary hypothyroidism — your thyroid gland is producing far too little hormone, and your pituitary is shouting at it (very high TSH) to try to compensate. This is not subclinical or borderline. It is well-understood and very treatable with a daily tablet, but a TSH this high should not wait — see a physician or endocrinologist this week.</p></div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-box bad"><span class="stat-num">150</span><span class="stat-label">TSH uIU/ml (Normal 0.55–4.78)</span></div>
+    <div class="stat-box bad"><span class="stat-num">7.98</span><span class="stat-label">FT4 pmol/L (Normal 11.5–22.7)</span></div>
+    <div class="stat-box bad"><span class="stat-num">2.48</span><span class="stat-label">FT3 pmol/L (Normal 3.5–6.5)</span></div>
+    <div class="stat-box blue"><span class="stat-num">&lt;4.78</span><span class="stat-label">TSH Goal Once Treated</span></div>
+  </div>
+  <div class="card">
+    <div class="card-title">🔗 How This Connects to Everything Else</div>
+    <p style="font-size:.86rem;line-height:1.8;color:#444">Thyroid hormone controls your metabolic rate. When it's this low, your body burns energy more slowly, which can: raise LDL and triglycerides, make weight loss harder, worsen fatigue, and even push up liver enzymes like ALT/AST. Some of what looked like "just metabolic syndrome" — the high cholesterol, the stubborn weight, the tiredness — may partly be this untreated thyroid. Starting levothyroxine and bringing TSH back to normal should make your diabetes, lipids, and energy levels easier to manage, not harder.</p>
+  </div>
+  <div class="card">
+    <div class="card-title">⚠️ Symptoms to Watch For</div>
+    <p style="font-size:.85rem;line-height:1.7;color:#444;margin-bottom:10px">Common symptoms of severe hypothyroidism include: constant tiredness, feeling unusually cold, dry skin, hair thinning, constipation, slow heart rate, puffiness around the face/eyes, and weight gain. If you notice these, they fit the lab picture and should improve once treatment starts.</p>
+    <div class="alert alert-amber" style="margin-bottom:0">
+      <span class="alert-icon">🆘</span>
+      <div><h3>Rare Emergency Signs — Go to ER If Present</h3>
+      <p>Severe, prolonged, untreated hypothyroidism can rarely progress to <strong>myxedema coma</strong>: extreme cold intolerance, confusion or extreme drowsiness, very slow pulse, or significant swelling of the face/legs. This is rare, but if any of these appear, go to an emergency room immediately rather than waiting for a routine appointment.</p></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">🩺 What to Expect From Treatment</div>
+    <ul class="tip-list">
+      <li><strong>Levothyroxine</strong> (e.g. Eltroxin, Thyrox in Pakistan) is the standard first-line treatment — a single daily tablet that replaces the hormone your thyroid isn't making enough of.</li>
+      <li>Take it <strong>on an empty stomach, first thing in the morning</strong>, with water, then wait 30–60 minutes before eating or taking other medicines (especially calcium, iron, or antacids — they block absorption).</li>
+      <li>Your doctor will usually start at a low-to-moderate dose and <strong>recheck TSH every 6–8 weeks</strong>, adjusting the dose until TSH normalises — this can take a few months. Don't expect an instant fix.</li>
+      <li>Do <strong>not</strong> stop or change the dose yourself once started, even if you feel better — thyroid dosing is fine-tuned by blood tests, not by symptoms alone.</li>
+      <li>Once TSH is stable, it's typically checked every 6–12 months long-term.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <div class="card-title">🧪 Thyroid Monitoring Going Forward</div>
+    <table>
+      <tr><th>Test</th><th>Normal Range</th><th>Your Result (23 Jun 2026)</th><th>Next Check</th></tr>
+      <tr><td>TSH</td><td>0.55–4.78 uIU/ml</td><td style="color:var(--red)">150 🔴</td><td>6–8 weeks after starting levothyroxine</td></tr>
+      <tr><td>FT4</td><td>11.5–22.7 pmol/L</td><td style="color:var(--red)">7.98 🔴 (low)</td><td>Alongside TSH</td></tr>
+      <tr><td>FT3</td><td>3.5–6.5 pmol/L</td><td style="color:var(--red)">2.48 🔴 (low)</td><td>Alongside TSH</td></tr>
+    </table>
+    <div class="research-note">📚 Targets based on American Thyroid Association (ATA) Hypothyroidism Treatment Guidelines.</div>
   </div>
 </div>
 
@@ -1422,13 +1587,15 @@ function showTab(id, btn) {
   window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
-// ── BEFORE/AFTER TOGGLE ──
+// ── BEFORE/NOW/AFTER TOGGLE ──
 function showBA(which) {
   document.querySelectorAll('.ba-panel').forEach(p => p.classList.remove('active'));
   document.getElementById('ba-' + which).classList.add('active');
   const bb = document.getElementById('btn-before');
+  const bn = document.getElementById('btn-now');
   const ba = document.getElementById('btn-after');
   bb.className = 'ba-btn' + (which === 'before' ? ' ab' : '');
+  bn.className = 'ba-btn' + (which === 'now' ? ' an' : '');
   ba.className = 'ba-btn' + (which === 'after' ? ' aa' : '');
 }
 
